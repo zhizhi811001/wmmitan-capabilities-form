@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Capability Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <form id="manufacturing-form">
+            
+            <!-- Page 1: Company Profile -->
+            <div class="page" id="page-1">
+                <h1>Company Profile</h1>
+                <label for="company-name">Legal Name:</label>
+                <input type="text" id="company-name" name="company-name" required>
+                <label for="company-trading-name">Trading Name:</label>
+                <input type="text" id="company-trading-name" name="company-trading-name">
+                <label for="company-address">HQ Address:</label>
+                <textarea id="company-address" name="company-address" required></textarea>
+                <label for="company-phone">Phone/Email:</label>
+                <input type="text" id="company-phone" name="company-phone" required>
+                <button type="button" class="next-btn" onclick="nextPage(1)">Next</button>
+            </div>
+
+            <!-- Page 2: Business & Financial -->
+            <div class="page" id="page-2">
+                <h1>Business & Financial</h1>
+                <label for="revenue-trends">Revenue Trends:</label>
+                <input type="text" id="revenue-trends" name="revenue-trends">
+                <label for="profitability-status">Profitability Status:</label>
+                <select id="profitability-status" name="profitability-status">
+                    <option value="profitable">Profitable</option>
+                    <option value="break-even">Break-even</option>
+                    <option value="loss-making">Loss-making</option>
+                </select>
+                <label for="key-customers">Key Customers:</label>
+                <textarea id="key-customers" name="key-customers"></textarea>
+                <button type="button" class="next-btn" onclick="nextPage(2)">Next</button>
+            </div>
+
+            <!-- Continue adding pages for all 13 categories similarly -->
+
+            <!-- Page 13: Notes & Attachments -->
+            <div class="page" id="page-13">
+                <h1>Notes & Attachments</h1>
+                <label for="differentiators">Differentiators:</label>
+                <textarea id="differentiators" name="differentiators"></textarea>
+                <label for="innovation-projects">Innovation Projects:</label>
+                <textarea id="innovation-projects" name="innovation-projects"></textarea>
+                <label for="attachments">Attachments:</label>
+                <input type="file" id="attachments" name="attachments">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
