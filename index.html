@@ -1,46 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manufacturing Capability Form</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
-
 <body>
     <div class="form-container">
-        <form id="manufacturing-form">
-            
+        <form id="manufacturingForm">
             <!-- Page 1: Company Profile -->
-            <div class="page" id="page-1">
-                <h1>Company Profile</h1>
-                <label for="company-name">Legal Name:</label>
-                <input type="text" id="company-name" name="company-name" required>
-                <label for="company-trading-name">Trading Name:</label>
-                <input type="text" id="company-trading-name" name="company-trading-name">
-                <label for="company-address">HQ Address:</label>
-                <textarea id="company-address" name="company-address" required></textarea>
-                <label for="company-phone">Phone/Email:</label>
-                <input type="text" id="company-phone" name="company-phone" required>
-                <button type="button" class="next-btn" onclick="nextPage(1)">Next</button>
+            <div class="form-page" id="page-1">
+                <h2>Page 1: Company Profile</h2>
+                <label for="legalName">Legal Name *</label>
+                <input type="text" id="legalName" name="legalName" required>
+                
+                <label for="tradingName">Trading Name</label>
+                <input type="text" id="tradingName" name="tradingName">
+                
+                <label for="companiesHouseNumber">Companies House Number</label>
+                <input type="text" id="companiesHouseNumber" name="companiesHouseNumber">
+                
+                <label for="hqAddress">HQ Address *</label>
+                <textarea id="hqAddress" name="hqAddress" required></textarea>
+                
+                <label for="siteAddresses">Site Addresses</label>
+                <textarea id="siteAddresses" name="siteAddresses"></textarea>
+                
+                <label for="contactPerson">Contact Person *</label>
+                <input type="text" id="contactPerson" name="contactPerson" required>
+                
+                <label for="phoneEmail">Phone/Email *</label>
+                <input type="text" id="phoneEmail" name="phoneEmail" required>
+                
+                <label for="yearFounded">Year Founded *</label>
+                <input type="text" id="yearFounded" name="yearFounded" required>
+                
+                <label for="headcount">Headcount *</label>
+                <input type="text" id="headcount" name="headcount" required>
+                
+                <label for="annualTurnover">Annual Turnover</label>
+                <input type="text" id="annualTurnover" name="annualTurnover">
+                
+                <label for="ownershipStructure">Ownership Structure *</label>
+                <select id="ownershipStructure" name="ownershipStructure" required>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="subsidiary">Subsidiary</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="dunsNumber">D-U-N-S Number</label>
+                <input type="text" id="dunsNumber" name="dunsNumber">
+                
+                <label for="creditRating">Credit Rating</label>
+                <input type="text" id="creditRating" name="creditRating">
+                
+                <label for="insuranceCover">Insurance Cover</label>
+                <textarea id="insuranceCover" name="insuranceCover"></textarea>
+
+                <button type="button" class="next-btn" onclick="nextPage(2)">Next</button>
             </div>
 
             <!-- Page 2: Business & Financial -->
-            <div class="page" id="page-2">
-                <h1>Business & Financial</h1>
-                <label for="revenue-trends">Revenue Trends:</label>
-                <input type="text" id="revenue-trends" name="revenue-trends">
-                <label for="profitability-status">Profitability Status:</label>
-                <select id="profitability-status" name="profitability-status">
+            <div class="form-page" id="page-2" style="display: none;">
+                <h2>Page 2: Business & Financial</h2>
+                <label for="revenueTrends">Revenue Trends</label>
+                <input type="text" id="revenueTrends" name="revenueTrends">
+                
+                <label for="profitabilityStatus">Profitability Status</label>
+                <select id="profitabilityStatus" name="profitabilityStatus">
                     <option value="profitable">Profitable</option>
                     <option value="break-even">Break-even</option>
                     <option value="loss-making">Loss-making</option>
                 </select>
-                <label for="key-customers">Key Customers:</label>
-                <textarea id="key-customers" name="key-customers"></textarea>
-                <button type="button" class="next-btn" onclick="nextPage(2)">Next</button>
+                
+                <label for="exportMarkets">Export Markets</label>
+                <textarea id="exportMarkets" name="exportMarkets"></textarea>
+                
+                <label for="keyCustomers">Key Customers</label>
+                <textarea id="keyCustomers" name="keyCustomers"></textarea>
+
+                <button type="button" class="prev-btn" onclick="prevPage(1)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextPage(3)">Next</button>
+            </div>
+
+            <!-- Page 3: Accreditations & Approvals -->
+            <div class="form-page" id="page-3" style="display: none;">
+                <h2>Page 3: Accreditations & Approvals</h2>
+                <label for="qualityManagementCertifications">Quality Management Certifications *</label>
+                <select id="qualityManagementCertifications" name="qualityManagementCertifications" required>
+                    <option value="iso9001">ISO 9001</option>
+                    <option value="iso14001">ISO 14001</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="text" id="certificationNumber" name="certificationNumber">
+                
+                <label for="nadcapScopes">Nadcap Scopes</label>
+                <select id="nadcapScopes" name="nadcapScopes">
+                    <option value="aerospace">Aerospace</option>
+                    <option value="automotive">Automotive</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="text" id="nadcapDetails" name="nadcapDetails">
+                
+                <label for="otherStandards">Other Standards</label>
+                <textarea id="otherStandards" name="otherStandards"></textarea>
+                
+                <label for="certificateExpiryDates">Certificate Expiry Dates</label>
+                <input type="date" id="certificateExpiryDates" name="certificateExpiryDates">
+                
+                <label for="lastAuditDate">Last Audit Date</label>
+                <input type="date" id="lastAuditDate" name="lastAuditDate">
+
+                <button type="button" class="prev-btn" onclick="prevPage(2)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextPage(4)">Next</button>
+            </div>
+
+            <!-- Page 4: Manufacturing Processes -->
+            <div class="form-page" id="page-4" style="display: none;">
+                <h2>Page 4: Manufacturing Processes</h2>
+                <label for="processCapabilities">Process Capabilities *</label>
+                <select id="processCapabilities" name="processCapabilities" required>
+                    <option value="milling">Milling</option>
+                    <option value="turning">Turning</option>
+                    <option value="welding">Welding</option>
+                </select>
+                <textarea id="processDetails" name="processDetails"></textarea>
+                
+                <label for="plantList">Plant List</label>
+                <textarea id="plantList" name="plantList"></textarea>
+                
+                <label for="automationLevel">Automation Level *</label>
+                <select id="automationLevel" name="automationLevel" required>
+                    <option value="manual">Manual</option>
+                    <option value="semi-automated">Semi-automated</option>
+                    <option value="fully-automated">Fully automated</option>
+                </select>
+                
+                <label for="specialProcesses">Special Processes</label>
+                <textarea id="specialProcesses" name="specialProcesses"></textarea>
+                
+                <label for="productionEnvelope">Production Envelope</label>
+                <input type="text" id="productionEnvelope" name="productionEnvelope">
+                
+                <label for="tolerancesAchievable">Tolerances Achievable</label>
+                <input type="text" id="tolerancesAchievable" name="tolerancesAchievable">
+                
+                <label for="materialsProcessed">Materials Processed *</label>
+                <select id="materialsProcessed" name="materialsProcessed" required>
+                    <option value="metal">Metal</option>
+                    <option value="plastic">Plastic</option>
+                    <option value="composite">Composite</option>
+                </select>
+                <textarea id="materialsDetails" name="materialsDetails"></textarea>
+
+                <button type="button" class="prev-btn" onclick="prevPage(3)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextPage(5)">Next</button>
+            </div>
+
+            <!-- Page 5: Product Development & NPI -->
+            <div class="form-page" id="page-5" style="display: none;">
+                <h2>Page 5: Product Development & NPI</h2>
+                <label for="phase1Planning">Phase 1 – Planning</label>
+                <input type="checkbox" id="phase1Planning" name="phase1Planning">
+                <input type="text" id="phase1Evidence" name="phase1Evidence">
+                
+                <label for="phase2Design">Phase 2 – Product Design</label>
+                <input type="checkbox" id="phase2Design" name="phase2Design">
+                <input type="text" id="phase2Evidence" name="phase2Evidence">
+                
+                <label for="phase3ProcessDesign">Phase 3 – Process Design</label>
+                <input type="checkbox" id="phase3ProcessDesign" name="phase3ProcessDesign">
+                <input type="text" id="phase3Evidence" name="phase3Evidence">
+                
+                <label for="phase4Validation">Phase 4 – Validation</label>
+                <input type="checkbox" id="phase4Validation" name="phase4Validation">
+                <input type="text" id="phase4Evidence" name="phase4Evidence">
+                
+                <label for="phase5Launch">Phase 5 – Launch & CI</label>
+                <input type="checkbox" id="phase5Launch" name="phase5Launch">
+                <input type="text" id="phase5Evidence" name="phase5Evidence">
+                
+                <label for="designTools">Design Tools</label>
+                <select id="designTools" name="designTools">
+                    <option value="cad">CAD</option>
+                    <option value="cam">CAM</option>
+                    <option value="plm">PLM</option>
+                </select>
+                <textarea id="designToolsDetails" name="designToolsDetails"></textarea>
+
+                <button type="button" class="prev-btn" onclick="prevPage(4)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextPage(6)">Next</button>
+            </div>
+
+            <!-- Page 6: Inspection & Metrology -->
+            <div class="form-page" id="page-6" style="display: none;">
+                <h2>Page 6: Inspection & Metrology</h2>
+                <label for="inspectionMethods">Inspection Methods *</label>
+                <select id="inspectionMethods" name="inspectionMethods" required>
+                    <option value="visual">Visual</option>
+                    <option value="mechanical">Mechanical</option>
+                    <option value="optical">Optical</option>
+                </select>
+                <textarea id="inspectionMethodsDetails" name="inspectionMethodsDetails"></textarea>
+                
+                <label for="accreditedLabs">Accredited Labs</label>
+                <input type="checkbox" id="accreditedLabs" name="accreditedLabs">
+                <textarea id="labDetails" name="labDetails"></textarea>
+                
+                <label for="testRigs">Test Rigs</label>
+                <textarea id="testRigs" name="testRigs"></textarea>
+                
+                <label for="ndtMethods">NDT Methods</label>
+                <select id="ndtMethods" name="ndtMethods">
+                    <option value="ut">Ultrasonic Testing</option>
+                    <option value="rt">Radiographic Testing</option>
+                </select>
+                <textarea id="ndtMethodsDetails" name="ndtMethodsDetails"></textarea>
+                
+                <label for="msaCompliance">MSA Compliance</label>
+                <input type="checkbox" id="msaCompliance" name="msaCompliance">
+                <textarea id="msaComplianceDetails" name="msaComplianceDetails"></textarea>
+
+                <button type="button" class="prev-btn" onclick="prevPage(5)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextPage(7)">Next</button>
+            </div>
+
+            <!-- Page 7: Quality & Continuous Improvement -->
+            <div class="form-page" id="page-7" style="display: none;">
+                <h2>Page 7: Quality & Continuous Improvement</h2>
+                <label for="spcImplementation">SPC Implementation</label>
+                <input type="checkbox" id="spcImplementation" name="spcImplementation">
+                <textarea id="spcEvidence" name="spcEvidence"></textarea>
+                
+                <label for="sixSigmaLevels">Six Sigma Levels</label>
+                <select id="sixSigmaLevels" name="sixSigmaLevels">
+                    <option value="yellow-belt">Yellow Belt</option>
+                    <option value="green-belt">Green Belt</option>
+                    <option value="black-belt">Black Belt</option>
+                </select>
+                <textarea id="sixSigmaDetails" name="sixSigmaDetails"></textarea>
+                
+                <label for="ciTools">CI Tools</label>
+                <select id="ciTools" name="ciTools">
+                    <option value="kaizen">Kaizen</option>
+                    <option value="lean">Lean</option>
+                </select>
+                <textarea id="ciToolsDetails" name="ciToolsDetails"></textarea>
+                
+                <label for="vdaScore">VDA 6.3 Score</label>
+                <input type="text" id="vdaScore" name="vdaScore">
+                
+                <label for="layeredProcessAudits">Layered Process Audits</label>
+                <input type="checkbox" id="layeredProcessAudits" name="layeredProcessAudits">
+               
+ <button type="button" class="prev-btn" onclick="prevPage(4)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextPage(6)">Next</button>
             </div>
 
             <!-- Continue adding pages for all 13 categories similarly -->
